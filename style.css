@@ -1,0 +1,31 @@
+.navbar-center {
+    left: 70%;
+    transform: translateX(-50%);
+}
+.navbar{
+    background-color:#F08787;
+    padding: 8px 15px 8px 50px;
+}
+.nav-item a {
+    color: white;
+}
+
+.nav-link{
+    cursor: pointer;
+}
+
+.table {
+    border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    background-color: aliceblue;
+    padding: 12px 15px;
+    text-align: left;
+}
