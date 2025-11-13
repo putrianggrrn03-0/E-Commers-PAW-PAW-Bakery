@@ -14,148 +14,20 @@ include 'connection.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="navbar-search.css">
-    <style>
-        body {
-            background-color: #fdf5e6;
-            /* Cream */
-            color: #3e2723;
-            /* Dark brown */
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Navbar styling */
-        .navbar {
-            background-color: #3e2723;
-            /* Dark brown */
-            position: relative;
-        }
-
-        .navbar-brand,
-        .nav-link,
-        .navbar-toggler-icon {
-            color: #fdf5e6 !important;
-        }
-
-        /* Center search form */
-        .search-center {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-top: 0;
-        }
-
-        .nav-link:hover {
-            color: #d7ccc8 !important;
-        }
-
-        /* Hero section */
-        .hero {
-            background-color: #6d4c41;
-            /* Medium brown */
-            color: #fff8dc;
-            text-align: center;
-            padding: 80px 20px;
-            border-radius: 20px;
-            margin-top: 20px;
-        }
-
-        .card {
-            border: none;
-            border-radius: 20px;
-            background-color: #fff8dc;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        footer {
-            background-color: #3e2723;
-            color: #fdf5e6;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .btn-brown {
-            background-color: #3e2723;
-            color: #fdf5e6;
-            border-radius: 10px;
-        }
-
-        .btn-brown:hover {
-            background-color: #5d4037;
-            color: #fff8dc;
-        }
-
-        /* Carousel styling */
-        .carousel {
-            margin-top: 20px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .carousel-inner {
-            border-radius: 15px;
-        }
-
-        .carousel-item img {
-            object-fit: cover;
-            height: 400px;
-            width: 100%;
-        }
-
-        .carousel-caption {
-            background: rgba(62, 39, 35, 0.7);
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        .carousel-caption h3 {
-            color: #fdf5e6;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .carousel-caption p {
-            color: #fff8dc;
-        }
-
-        .carousel-indicators button {
-            background-color: #fdf5e6;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin: 0 5px;
-        }
-
-        .navbar .dropdown button {
-            color: #d7ccc8 !important;
-        }
-
-        .navbar .dropdown button:hover {
-            color: #fff3e0 !important;
-            /* warna sedikit lebih terang saat hover */
-        }
-    </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg" style="padding: 8px 15px 8px 50px;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">PAW PAW</a>
+            <a class="navbar-brand" href="index.php">PAW PAW</a>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="produk.php">Produk</a>
+                        <a class="nav-link" href="user/produk.php">Produk</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
@@ -170,22 +42,22 @@ include 'connection.php';
             <div class="justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Pesanan</a>
+                        <a class="nav-link" aria-current="page" href="user/pesanan.php">Pesanan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="keranjang.php">Keranjang</a>
+                        <a class="nav-link" href="user/keranjang.php">Keranjang</a>
                     </li>
                     <li class="nav-item d-flex">
 
                         <?php
                         if (isset($_SESSION['nama_user'])) {
                             echo '<div class="dropdown mt-1 color: #d7ccc8;">
-                            <button class="btn border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">'
+                            <button class="btn border-0 text-light" type="button" style="font-weight: 600;" data-bs-toggle="dropdown" aria-expanded="false">'
                                 . $_SESSION['nama_user'] .
                                 '</button>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item text-dark" href="profil.php">Profil</a></li>
-                                <li><a class="dropdown-item text-dark" href="logout.php">Log Out</a></li>
+                                <li><a class="dropdown-item text-dark" href="user/profil.php">Profil</a></li>
+                                <li><a class="dropdown-item text-dark" href="user/logout.php">Log Out</a></li>
                             </ul>
                             </div>';
                         } else {
@@ -202,8 +74,6 @@ include 'connection.php';
                     </li>
                 </ul>
             </div>
-
-
         </div>
     </nav>
 
@@ -215,7 +85,7 @@ include 'connection.php';
                     <h1 class="modal-title fs-5" id="exampleModalLabel">REGISTER</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form class="register" action="dataregister.php" method="post">
+                <form class="register" action="user/dataregister.php" method="post">
                     <div class="modal-body">
 
                         <div class="mb-3">
@@ -241,7 +111,6 @@ include 'connection.php';
 
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Sign Up</button>
                     </div>
                 </form>
@@ -257,7 +126,7 @@ include 'connection.php';
                     <h1 class="modal-title fs-5" id="exampleModalLabel">SIGN IN</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form class="signin" action="datasignin.php" method="post">
+                <form class="signin" action="user/datasignin.php" method="post">
                     <div class="modal-body">
 
                         <div class="mb-3">
@@ -271,7 +140,6 @@ include 'connection.php';
 
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Log in</button>
                     </div>
                 </form>
@@ -282,9 +150,9 @@ include 'connection.php';
     <!-- Hero Section -->
     <?php if (isset($_GET['checkout']) && $_GET['checkout'] === 'success'): ?>
     <div class="container mt-3">
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Transaksi berhasil!</strong> Terima kasih, pesanan Anda telah diterima.
-            <a href="pesanan.php" class="alert-link">Lihat pesanan</a>.
+            <a href="user/pesanan.php" class="alert-link">Lihat pesanan</a>.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </div>
@@ -297,7 +165,7 @@ include 'connection.php';
     </div>
     <?php endif; ?>
 
-    <div class="container">
+    <div class="container mt-3">
 
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -337,7 +205,7 @@ include 'connection.php';
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row['nama_produk'] ?></h5>
                                 <p class="card-text"><?php echo $row['deskripsi'] ?></p>
-                                <button class="btn btn-brown">Beli Sekarang</button>
+                                <a href="user/produk.php" class="btn btn-brown">Beli Sekarang</a>
                             </div>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ if (!isset($_SESSION['id_admin'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <title>Daftar Produk</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
  
@@ -23,19 +23,19 @@ if (!isset($_SESSION['id_admin'])) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="padding: 8px 15px 8px 50px;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">MyWebsite</a>
+            <a class="navbar-brand" href="dasboard.php">Admin Panel</a>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Dasboard</a>
+                        <a class="nav-link" aria-current="page" href="dasboard.php">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="produk.php">Data Produk</a>
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Data Order</a>
+                        <a class="nav-link" href="orderan.php">Data Order</a>
                     </li>
                 </ul>
             </div>
@@ -66,9 +66,13 @@ if (!isset($_SESSION['id_admin'])) {
     </nav>
 
         <h2 class="text-center">Daftar Stok</h2>
-        <div class="d-flex justify-content-end me-5">
-            <button data-bs-toggle="modal" data-bs-target="#tambahProduk">
-                ADD PRODUK
+        <div class="d-flex justify-content-end me-4">
+            <button class="btn btn-primary btn-add" data-bs-toggle="modal" data-bs-target="#tambahProduk" aria-label="Tambah Produk">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" style="margin-right:8px; vertical-align:middle;">
+                    <path d="M12 5v14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 12h14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Tambah Produk
             </button>
         </div>
     
@@ -76,7 +80,7 @@ if (!isset($_SESSION['id_admin'])) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">ADD PRODUK</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Produk</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form class="tambahProduk" action="addproduk.php" method="post" enctype="multipart/form-data">
@@ -109,8 +113,8 @@ if (!isset($_SESSION['id_admin'])) {
 
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Tambah Produk</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary" size="10">Tambah Produk</button>
                     </div>
                 </form>
             </div>

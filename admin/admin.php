@@ -2,10 +2,10 @@
 session_start();
 include ('../connection.php');
 
-// if (isset($_SESSION["loginadmin"])) {
-//   header("Location:dashboard.php");
-//   exit();
-// }
+if (isset($_SESSION["id_admin"])) {
+  header("Location:dasboard.php");
+  exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,17 +18,10 @@ include ('../connection.php');
   <!-- Bs -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <!-- Default -->
-  <link rel="stylesheet" href="./style/style.css" />
-
-  <style>
-    .form-control {
-      border: none;
-      border-bottom: 1px solid #ced4da;
-    }
-  </style>
+  <link rel="stylesheet" href="../style.css" />
 </head>
 
-<body style="background-color: #f6f5f2">
+<body class="admin-body">
   <!-- Header -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#957C62;">
