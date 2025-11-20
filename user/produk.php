@@ -8,7 +8,7 @@ include '../connection.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SweetBite | Produk</title>
+    <title>PAW PAW Bakery | Produk</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -156,7 +156,7 @@ include '../connection.php';
     <div class="container">
 
         <!-- Cake Section -->
-        <h2 class="category-title fade-in">🎂 Cake</h2>
+        <h2 class="category-title fade-in" style="font-style:italic;">Cheesecake</h2>
         <div class="row g-4 mb-5">
             <?php
             $sql = "SELECT * FROM produk WHERE kategori = 'cake'";
@@ -184,7 +184,7 @@ include '../connection.php';
                                         <button type="button" class="qty-btn qty-plus">+</button>
                                     </div>
                                     <small class="text-muted d-block text-center mb-2">Stok tersedia: <?php echo $row['stok'] ?></small>
-                                    <button type="submit" class="btn btn-cart">+ Tambah ke Keranjang</button>
+                                    <button type="submit" class="btn btn-cart" <?php echo !isset($_SESSION['id_user']) ? 'disabled title="Login untuk menambahkan ke keranjang"' : ''; ?>>+ Tambah ke Keranjang</button>
                                 </form>
                                 <?php else: ?>
                                 <div class="text-center mt-3">
@@ -202,7 +202,7 @@ include '../connection.php';
             }
             ?>
         </div>
-         <h2 class="category-title fade-in">🍪 Cookies</h2>
+         <h2 class="category-title fade-in" style="font-style: italic;">Cookies</h2>
         <div class="row g-4 mb-5">
             <?php
             $sql = "SELECT * FROM produk WHERE kategori='cookies'";
@@ -233,7 +233,7 @@ include '../connection.php';
                                     </div>
                                     <small class="text-muted d-block text-center mb-2">Stok tersedia: <?php echo $row['stok'] ?></small>
                                     
-                                    <button type="submit" class="btn btn-cart">+ Tambah ke Keranjang</button>
+                                    <button type="submit" class="btn btn-cart" <?php echo !isset($_SESSION['id_user']) ? 'disabled title="Login untuk menambahkan ke keranjang"' : ''; ?>>+ Tambah ke Keranjang</button>
                                 </form>
                                 <?php else: ?>
                                 <div class="text-center mt-3">
@@ -254,10 +254,10 @@ include '../connection.php';
 
 
         <!-- Dessert Section -->
-        <h2 class="category-title fade-in">🍨 Dessert</h2>
+        <h2 class="category-title fade-in" style="font-style: italic;">Brownies</h2>
         <div class="row g-4 mb-5">
             <?php
-            $sql = "SELECT * FROM produk WHERE kategori='dessert'";
+            $sql = "SELECT * FROM produk WHERE kategori='brownies'";
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -285,7 +285,7 @@ include '../connection.php';
                                     </div>
                                     <small class="text-muted d-block text-center mb-2">Stok tersedia: <?php echo $row['stok'] ?></small>
                                     
-                                    <button type="submit" class="btn btn-cart" <?php echo !isset($_SESSION['user_id']) ? 'disabled title="Login untuk menambahkan ke keranjang"' : ''; ?>>+ Tambah ke Keranjang</button>
+                                    <button type="submit" class="btn btn-cart" <?php echo !isset($_SESSION['id_user']) ? 'disabled title="Login untuk menambahkan ke keranjang"' : ''; ?>>+ Tambah ke Keranjang</button>
                                 </form>
                                 <?php else: ?>
                                 <div class="text-center mt-3">
