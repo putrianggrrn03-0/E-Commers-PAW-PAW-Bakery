@@ -757,3 +757,50 @@ button.action:hover {
 .text-right {
   text-align: right;
 }
+
+
+/* Global Style */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Smartphone (max-width: 767px) */
+@media (max-width: 480px) and (max-width:767px) {
+  .navbar {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* Tablet (min-width: 768px) dan (max-width: 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar {
+    width: 90%;
+    padding: 15px;
+    margin: 0 auto;
+  }
+}
+
+/* Laptop dan Desktop (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .navbar {
+    width: 80%;
+    padding: 20px;
+    margin: 0 auto;
+  }
+}
+
+

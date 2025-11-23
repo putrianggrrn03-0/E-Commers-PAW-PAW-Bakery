@@ -56,6 +56,23 @@ include 'connection.php';
                 /* otomatis mengecil */
             }
         }
+
+        .carousel-item img {
+            width: 100%;
+            height: 500px;
+            /* Tinggi carousel yang kamu mau */
+            object-fit: cover;
+            /* Kunci agar gambar selalu pas */
+            border-radius: 40px;
+            /* Border melengkung seperti gambarmu */
+        }
+
+        .carousel-inner {
+            border-radius: 40px;
+            /* Membuat seluruh carousel melengkung */
+            overflow: hidden;
+            /* Biar gambar tidak keluar frame */
+        }
     </style>
 </head>
 
@@ -218,13 +235,13 @@ include 'connection.php';
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/br.jpg" class="d-block w-100" alt="...">
+                    <img src="img/A1.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/ck.jpg" class="d-block w-100" alt="...">
+                    <img src="img/InCollage_20251123_122829466.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/co.jpg" class="d-block w-100" alt="...">
+                    <img src="img/cv3.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
