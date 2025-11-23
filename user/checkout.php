@@ -18,129 +18,27 @@ if (!isset($_SESSION['id_user'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../navbar-responsive.css">
     <title>Payment</title>
+    <style>
+        body{
+            background-color: #FFF8DE;
+        }
+        .btn {
+            color: white;
+        }
+    </style>
 </head>
-<style>
-    .title-page {
-        text-align: center;
-        margin-bottom: 25px;
-        font-weight: 600;
-    }
 
-    .section {
-        background-color: #fff;
-        border-radius: 15px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        padding: 15px 20px;
-        margin-bottom: 20px;
-    }
-
-    .section-title {
-        font-weight: 600;
-        margin-bottom: 10px;
-        color: #2b2b2b;
-    }
-
-    .address-info {
-        line-height: 1.6;
-    }
-
-    .radio-group {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .radio-group label {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-weight: 500;
-    }
-
-    input[type="radio"] {
-        accent-color: #b5651d;
-        transform: scale(1.2);
-    }
-
-    .order-summary {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .order-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .order-item img {
-        width: 50px;
-        height: 50px;
-        border-radius: 10px;
-        object-fit: cover;
-    }
-
-    .order-text {
-        font-size: 14px;
-    }
-
-    .subtotal {
-        margin-top: 10px;
-        font-weight: 500;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .note {
-        font-size: 12px;
-        color: #777;
-        margin-top: 4px;
-    }
-
-    .payment-method {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .payment-method label {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-weight: 500;
-    }
-
-    .btn {
-        display: block;
-        width: 100%;
-        background-color: #b5651d;
-        color: white;
-        border: none;
-        padding: 14px;
-        font-size: 16px;
-        border-radius: 12px;
-        margin-top: 25px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: background 0.3s;
-    }
-
-    .btn:hover {
-        background-color: #8a4b16;
-    }
-</style>
 
 <body>
-    <nav class="navbar navbar-expand-lg" style="padding: 8px 15px 8px 50px;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../index.php">PAW PAW</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-brown">
+        <div class="container">
+            <a class="navbar-brand" href="index.php"><img src="../img/PAWLOGO.png" alt="Logo" width="150" height="40" class="d-inline-block align-text-top"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="../index.php">Home</a>
                     </li>
@@ -148,45 +46,37 @@ if (!isset($_SESSION['id_user'])) {
                         <a class="nav-link" href="produk.php">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="kontak.php">Contact</a>
                     </li>
                 </ul>
-            </div>
 
-            <form class="d-flex justify-content-center mx-auto me-4" role="search">
-                <input class="form-control" size="40" type="search" placeholder="Search..." aria-label="Search">
-            </form>
+                <form class="d-flex mx-lg-3 my-2 my-lg-0" role="search">
+                    <input class="form-control" size="30" type="search" placeholder="Search..." aria-label="Search">
+                </form>
 
-            <div class="justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="pesanan.php">Pesanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="keranjang.php">Keranjang</a>
                     </li>
-                    <li class="nav-item d-flex">
+                    <li class="nav-item d-flex align-items-center">
 
                         <?php
                         if (isset($_SESSION['nama_user'])) {
-                            echo '<div class="dropdown mt-1 color: #d7ccc8;">
-                            <button class="btn border-0 text-light" type="button" style="font-weight: 600;" data-bs-toggle="dropdown" aria-expanded="false">'
-                                . $_SESSION['nama_user'] .
+                            echo '<div class="dropdown mt-1">
+                            <button class="btn btn-sm btn-outline-light" type="button" style="font-weight: 600;" data-bs-toggle="dropdown" aria-expanded="false">'
+                                . htmlspecialchars($_SESSION['nama_user']) .
                                 '</button>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item text-dark" href="profil.php">Profil</a></li>
-                                <li><a class="dropdown-item text-dark" href="logout.php">Log Out</a></li>
+                                <li><a class="dropdown-item text-black" href="user/profil.php">Profil</a></li>
+                                <li><a class="dropdown-item text-black" href="user/logout.php">Log Out</a></li>
                             </ul>
                             </div>';
                         } else {
-                        ?>
-
-                        <?php
-                            echo '
-                        <a class="nav-link px-0" data-bs-toggle="modal" data-bs-target="#exampleModal2">Sign in/</a>
-                        <a class="nav-link px-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</a>
-                    
-                    ';
+                            echo '<a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="font-weight: 700;"><b>Sign in</b></a>';
+                            echo '<a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-weight: 700;"><b>Register</b></a>';
                         }
                         ?>
                     </li>
@@ -266,11 +156,10 @@ if (!isset($_SESSION['id_user'])) {
             </div>
         </div>
     </div>
-
     <!-- Delivery Address -->
     <div class="checkout-container">
         <header class="checkout-header">
-            <h2>Payment</h2>
+            <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;">Payment</h2>
         </header>
 
         <!-- Delivery Address -->

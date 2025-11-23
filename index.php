@@ -75,7 +75,7 @@ include 'connection.php';
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.php">PAW PAW</a>
+            <a class="navbar-brand" href="index.php"> <img src="img/PAWLOGO.png" alt="Logo" width="150" height="40" class="d-inline-block align-text-top"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -226,21 +226,21 @@ include 'connection.php';
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/A1.png" class="d-block w-100" alt="...">
+                    <img src="img/slide1.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/InCollage_20251123_122829466.jpg" class="d-block w-100" alt="...">
+                    <img src="img/slide2.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/cv3.jpg" class="d-block w-100" alt="...">
+                    <img src="img/slide3.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="carousel-control-prev-icon btn btn-brown" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="carousel-control-next-icon btn btn-brown" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
@@ -254,7 +254,7 @@ include 'connection.php';
                 <!--P1-->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm" style="border-radius: 15px; overflow: hidden;">
-                        <img class="card-img-top" src="img/ck.jpg" alt="Cheesecake" style="height: 200px; object-fit: cover;">
+                        <img class="card-img-top" src="img/cheesecake-card.jpg" alt="Cheesecake" style="height: 200px; object-fit: cover;">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title text-center fw-bold" style="color: #3e2723;">Cheesecake</h5>
                             <p class="card-text flex-grow-1" style="color: #666; line-height: 1.5;">Cheesecake lembut dan creamy dengan rasa manis-gurih yang seimbang, berpadu dengan aroma susu yang khas.</p>
@@ -266,7 +266,7 @@ include 'connection.php';
                 <!--P2-->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm" style="border-radius: 15px; overflow: hidden;">
-                        <img class="card-img-top" src="img/co.jpg" alt="Cookies" style="height: 200px; object-fit: cover;">
+                        <img class="card-img-top" src="img/cookies-card.jpg" alt="Cookies" style="height: 200px; object-fit: cover;">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title text-center fw-bold" style="color: #3e2723;">Cookies</h5>
                             <p class="card-text flex-grow-1" style="color: #666; line-height: 1.5;">Cookies renyah di luar dan lembut di dalam, menghadirkan rasa manis gurih dengan berbagai pilihan topping dan isian.</p>
@@ -278,7 +278,7 @@ include 'connection.php';
                 <!--P3-->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm" style="border-radius: 15px; overflow: hidden;">
-                        <img class="card-img-top" src="img/br.jpg" alt="Brownies" style="height: 200px; object-fit: cover;">
+                        <img class="card-img-top" src="img/brownies-card.jpg" alt="Brownies" style="height: 200px; object-fit: cover;">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title text-center fw-bold" style="color: #3e2723;">Brownies</h5>
                             <p class="card-text flex-grow-1" style="color: #666; line-height: 1.5;">Brownies cokelat pekat dengan tekstur fudgy, manisnya pas, dan aroma cokelat yang intens di setiap gigitan.</p>
