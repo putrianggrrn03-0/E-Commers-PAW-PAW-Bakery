@@ -247,37 +247,43 @@ include 'connection.php';
     </div>
 
         <!-- Produk Populer -->
-        <div class="kue-populer-section">
-            <h2 class="fw-bold text-center">🍪 Kue Populer Minggu Ini</h2>
-            <div class="kue-populer-cards">
+        <div class="container my-5">
+            <h2 class="fw-bold text-center mb-4">🍪 Kue Populer Minggu Ini</h2>
+            <div class="row g-4 justify-content-center">
 
                 <!--P1-->
-                <div class="card kue-populer-card">
-                    <img class="card-img-top" src="img/ck.jpg" alt="Cheesecake">
-                    <div class="card-body">
-                        <h5 class="card-title">Cheesecake</h5>
-                        <p class="card-text">Cheesecake lembut dan creamy dengan rasa manis-gurih yang seimbang, berpadu dengan aroma susu yang khas.</p>
-                        <a href="user/produk.php" class="btn btn-primary">Shop Now</a>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+                        <img class="card-img-top" src="img/ck.jpg" alt="Cheesecake" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-center fw-bold" style="color: #3e2723;">Cheesecake</h5>
+                            <p class="card-text flex-grow-1" style="color: #666; line-height: 1.5;">Cheesecake lembut dan creamy dengan rasa manis-gurih yang seimbang, berpadu dengan aroma susu yang khas.</p>
+                            <a href="user/produk.php" class="btn btn-primary mt-auto" style="border-radius: 10px; font-weight: 600;">Shop Now</a>
+                        </div>
                     </div>
                 </div>
                 
                 <!--P2-->
-                <div class="card kue-populer-card">
-                    <img class="card-img-top" src="img/co.jpg" alt="Cookies">
-                    <div class="card-body">
-                        <h5 class="card-title">Cookies</h5>
-                        <p class="card-text">Cookies renyah di luar dan lembut di dalam, menghadirkan rasa manis gurih dengan berbagai pilihan topping dan isian.</p>
-                        <a href="user/produk.php" class="btn btn-primary">Shop Now</a>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+                        <img class="card-img-top" src="img/co.jpg" alt="Cookies" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-center fw-bold" style="color: #3e2723;">Cookies</h5>
+                            <p class="card-text flex-grow-1" style="color: #666; line-height: 1.5;">Cookies renyah di luar dan lembut di dalam, menghadirkan rasa manis gurih dengan berbagai pilihan topping dan isian.</p>
+                            <a href="user/produk.php" class="btn btn-primary mt-auto" style="border-radius: 10px; font-weight: 600;">Shop Now</a>
+                        </div>
                     </div>
                 </div>
                 
                 <!--P3-->
-                <div class="card kue-populer-card">
-                    <img class="card-img-top" src="img/br.jpg" alt="Brownies">
-                    <div class="card-body">
-                        <h5 class="card-title">Brownies</h5>
-                        <p class="card-text">Brownies cokelat pekat dengan tekstur fudgy, manisnya pas, dan aroma cokelat yang intens di setiap gigitan.</p>
-                        <a href="user/produk.php" class="btn btn-primary">Shop Now</a>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+                        <img class="card-img-top" src="img/br.jpg" alt="Brownies" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-center fw-bold" style="color: #3e2723;">Brownies</h5>
+                            <p class="card-text flex-grow-1" style="color: #666; line-height: 1.5;">Brownies cokelat pekat dengan tekstur fudgy, manisnya pas, dan aroma cokelat yang intens di setiap gigitan.</p>
+                            <a href="user/produk.php" class="btn btn-primary mt-auto" style="border-radius: 10px; font-weight: 600;">Shop Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
