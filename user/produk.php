@@ -16,12 +16,15 @@ include '../connection.php';
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" style="padding: 8px 15px 8px 50px;">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
             <a class="navbar-brand" href="index.php">PAW PAW</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="../index.php">Home</a>
                     </li>
@@ -29,45 +32,37 @@ include '../connection.php';
                         <a class="nav-link" href="produk.php">Produk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="kontak.php">Contact</a>
                     </li>
                 </ul>
-            </div>
 
-            <form class="d-flex justify-content-center mx-auto me-4" role="search">
-                <input class="form-control" size="40" type="search" placeholder="Search..." aria-label="Search">
-            </form>
+                <form class="d-flex mx-lg-3 my-2 my-lg-0" role="search">
+                    <input class="form-control" size="30" type="search" placeholder="Search..." aria-label="Search">
+                </form>
 
-            <div class="justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="pesanan.php">Pesanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="keranjang.php">Keranjang</a>
                     </li>
-                    <li class="nav-item d-flex">
+                    <li class="nav-item d-flex align-items-center">
 
                         <?php
                         if (isset($_SESSION['nama_user'])) {
-                            echo '<div class="dropdown mt-1 color: #d7ccc8;">
-                            <button class="btn border-0 text-light" type="button" style="font-weight: 600;" data-bs-toggle="dropdown" aria-expanded="false">'
-                                . $_SESSION['nama_user'] .
+                            echo '<div class="dropdown mt-1">
+                            <button class="btn btn-sm btn-outline-light" type="button" style="font-weight: 600;" data-bs-toggle="dropdown" aria-expanded="false">'
+                                . htmlspecialchars($_SESSION['nama_user']) .
                                 '</button>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item text-dark" href="profil.php">Profil</a></li>
-                                <li><a class="dropdown-item text-dark" href="logout.php">Log Out</a></li>
+                                <li><a class="dropdown-item text-black" href="user/profil.php">Profil</a></li>
+                                <li><a class="dropdown-item text-black" href="user/logout.php">Log Out</a></li>
                             </ul>
                             </div>';
                         } else {
-                        ?>
-
-                        <?php
-                            echo '
-                        <a class="nav-link px-0" data-bs-toggle="modal" data-bs-target="#exampleModal2">Sign in/</a>
-                        <a class="nav-link px-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</a>
-                    
-                    ';
+                            echo '<a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="font-weight: 700;"><b>Sign in</b></a>';
+                            echo '<a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-weight: 700;"><b>Register</b></a>';
                         }
                         ?>
                     </li>
@@ -341,4 +336,6 @@ include '../connection.php';
                 });
             });
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../navbar-mobile.js"></script>
 </html>

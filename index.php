@@ -18,26 +18,26 @@ include 'connection.php';
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="navbar-search.css">
     <style>
-        /* Container keseluruhan supaya tidak mepet ke pinggir */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
         #carouselExampleIndicators {
             max-width: 1500px;
             margin: auto;
         }
 
-        /* Membuat carousel melengkung besar */
         #carouselExampleIndicators .carousel-inner {
             border-radius: 30px;
             overflow: hidden;
         }
 
-        /* Mengatur tinggi dan style gambar seperti Beautyhaul */
         #carouselExampleIndicators .carousel-inner img {
-            height: 420px;
+            height: 550px;
             width: 100%;
             object-fit: cover;
         }
 
-        /* Indikator ala Beautyhaul (kecil & bulat) */
         #carouselExampleIndicators .carousel-indicators button {
             width: 10px;
             height: 10px;
@@ -49,7 +49,6 @@ include 'connection.php';
             background-color: #333;
         }
 
-        /* Responsif untuk HP */
         @media (max-width: 768px) {
             #carouselExampleIndicators .carousel-inner img {
                 height: 240px;
@@ -59,12 +58,9 @@ include 'connection.php';
 
         .carousel-item img {
             width: 100%;
-            height: 500px;
-            /* Tinggi carousel yang kamu mau */
+            height: 400px;
             object-fit: cover;
-            /* Kunci agar gambar selalu pas */
             border-radius: 40px;
-            /* Border melengkung seperti gambarmu */
         }
 
         .carousel-inner {
@@ -77,12 +73,15 @@ include 'connection.php';
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg" style="padding: 8px 15px 8px 50px;">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
             <a class="navbar-brand" href="index.php">PAW PAW</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="index.php">Home</a>
                     </li>
@@ -93,42 +92,34 @@ include 'connection.php';
                         <a class="nav-link" href="user/kontak.php">Contact</a>
                     </li>
                 </ul>
-            </div>
 
-            <form class="d-flex justify-content-center mx-auto me-4" role="search">
-                <input class="form-control" size="40" type="search" placeholder="Search..." aria-label="Search">
-            </form>
+                <form class="d-flex mx-lg-3 my-2 my-lg-0" role="search">
+                    <input class="form-control" size="30" type="search" placeholder="Search..." aria-label="Search">
+                </form>
 
-            <div class="justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="user/pesanan.php">Pesanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="user/keranjang.php">Keranjang</a>
                     </li>
-                    <li class="nav-item d-flex">
+                    <li class="nav-item d-flex align-items-center">
 
                         <?php
                         if (isset($_SESSION['nama_user'])) {
-                            echo '<div class="dropdown mt-1 color: #d7ccc8;">
-                            <button class="btn border-0 text-light" type="button" style="font-weight: 600;" data-bs-toggle="dropdown" aria-expanded="false">'
-                                . $_SESSION['nama_user'] .
+                            echo '<div class="dropdown mt-1">
+                            <button class="btn btn-sm btn-outline-light" type="button" style="font-weight: 600;" data-bs-toggle="dropdown" aria-expanded="false">'
+                                . htmlspecialchars($_SESSION['nama_user']) .
                                 '</button>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item text-dark" href="user/profil.php">Profil</a></li>
-                                <li><a class="dropdown-item text-dark" href="user/logout.php">Log Out</a></li>
+                                <li><a class="dropdown-item text-black" href="user/profil.php">Profil</a></li>
+                                <li><a class="dropdown-item text-black" href="user/logout.php">Log Out</a></li>
                             </ul>
                             </div>';
                         } else {
-                        ?>
-
-                        <?php
-                            echo '
-                        <a class="nav-link px-0" data-bs-toggle="modal" data-bs-target="#exampleModal2">Sign in/</a>
-                        <a class="nav-link px-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</a>
-                    
-                    ';
+                            echo '<a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="font-weight: 700;"><b>Sign in</b></a>';
+                            echo '<a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-weight: 700;"><b>Register</b></a>';
                         }
                         ?>
                     </li>
@@ -253,38 +244,44 @@ include 'connection.php';
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+    </div>
 
         <!-- Produk Populer -->
-        <h2 class="mt-5 mb-3 fw-bold text-center">🍪 Kue Populer Minggu Ini</h2>
-        <div class="row g-4">
+        <div class="kue-populer-section">
+            <h2 class="fw-bold text-center">🍪 Kue Populer Minggu Ini</h2>
+            <div class="kue-populer-cards">
 
-            <!--P1-->
-            <div class="card ms-5" style="width: 20rem;">
-                <img class="card-img-top" src="img/ck.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title" style="font-family: serif ; text-align:center;"><b>Cheesecake</b></h5>
-                    <p class="card-text" style="font-family:Arial, Helvetica, sans-serif;">Cheesecake lembut dan creamy dengan rasa manis-gurih yang seimbang, berpadu dengan aroma susu yang khas.</p>
-                    <a href="user/produk.php" class="btn btn-primary">Shop Now</a>
+                <!--P1-->
+                <div class="card kue-populer-card">
+                    <img class="card-img-top" src="img/ck.jpg" alt="Cheesecake">
+                    <div class="card-body">
+                        <h5 class="card-title">Cheesecake</h5>
+                        <p class="card-text">Cheesecake lembut dan creamy dengan rasa manis-gurih yang seimbang, berpadu dengan aroma susu yang khas.</p>
+                        <a href="user/produk.php" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!--P2-->
+                <div class="card kue-populer-card">
+                    <img class="card-img-top" src="img/co.jpg" alt="Cookies">
+                    <div class="card-body">
+                        <h5 class="card-title">Cookies</h5>
+                        <p class="card-text">Cookies renyah di luar dan lembut di dalam, menghadirkan rasa manis gurih dengan berbagai pilihan topping dan isian.</p>
+                        <a href="user/produk.php" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!--P3-->
+                <div class="card kue-populer-card">
+                    <img class="card-img-top" src="img/br.jpg" alt="Brownies">
+                    <div class="card-body">
+                        <h5 class="card-title">Brownies</h5>
+                        <p class="card-text">Brownies cokelat pekat dengan tekstur fudgy, manisnya pas, dan aroma cokelat yang intens di setiap gigitan.</p>
+                        <a href="user/produk.php" class="btn btn-primary">Shop Now</a>
+                    </div>
                 </div>
             </div>
-            <!--P2-->
-            <div class="card ms-5" style="width: 20rem;">
-                <img class="card-img-top" src="img/co.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title" style="font-family: serif ; text-align:center;"><b>Cookies</b></h5>
-                    <p class="card-text" style="font-family:Arial, Helvetica, sans-serif;">Cookies renyah di luar dan lembut di dalam, menghadirkan rasa manis gurih dengan berbagai pilihan topping dan isian.</p>
-                    <a href="user/produk.php" class="btn btn-primary">Shop Now</a>
-                </div>
-            </div>
-            <!--P3-->
-            <div class="card ms-5 " style="width: 20rem;">
-                <img class="card-img-top" src="img/br.jpg" alt="Card image cap" style="object-fit: cover;">
-                <div class="card-body">
-                    <h5 class="card-title" style="font-family: serif ; text-align:center;"><b>Brownies</b></h5>
-                    <p class="card-text" style="font-family:Arial, Helvetica, sans-serif;">Brownies cokelat pekat dengan tekstur fudgy, manisnya pas, dan aroma cokelat yang intens di setiap gigitan.</p>
-                    <a href="user/produk.php" class="btn btn-primary">Shop Now</a>
-                </div>
-            </div>
+        </div>
             <!-- <?php
                     $sql = "SELECT * FROM produk LIMIT 3";
                     $result = mysqli_query($conn, $sql);
@@ -318,14 +315,16 @@ include 'connection.php';
                 <p>Dapatkan potongan harga 20% untuk semua varian cheesecake hingga Minggu ini.</p>
                 <a href="#" class="btn btn-brown">Lihat Promo</a>
             </div>
-        </div>
+            </div>
+        </div> <!-- close .container -->
 
-        <!-- Footer -->
-        <footer class="mt-5">
+        <!-- Footer (full-width) -->
+        <footer class="mt-5 w-100 text-center">
             <p>&copy; 2025 SweetBite Bakery | Semua hak cipta dilindungi 🍰</p>
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="navbar-mobile.js"></script>
 </body>
 
 </html>
