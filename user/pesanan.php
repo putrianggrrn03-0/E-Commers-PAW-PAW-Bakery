@@ -4,7 +4,7 @@ include '../connection.php';
 
 // Pastikan user sudah login
 if (!isset($_SESSION['id_user'])) {
-    header("Location: ../index.php");
+    header("Location: ../index.php?must_login=1");
     exit();
 }
 

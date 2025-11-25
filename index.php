@@ -17,10 +17,12 @@ include 'connection.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
             width: 100%;
         }
+
         #carouselExampleIndicators {
             max-width: 1500px;
             margin: auto;
@@ -215,6 +217,16 @@ include 'connection.php';
         </div>
     <?php endif; ?>
 
+    <?php if (isset($_GET['must_login'])): ?>
+        <div class="container mt-3">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>You need to sign in first 😊</strong>
+                Please log in before accessing that page.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        </div>
+    <?php endif; ?>
+
     <div class="container mt-3">
 
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -245,59 +257,59 @@ include 'connection.php';
         </div>
     </div>
 
-        <!-- Produk Populer -->
-        <div class="container my-5">
-            <h2 class="fw-bold text-center mb-4">🍪 Kue Populer Minggu Ini</h2>
-            <div class="row g-4 justify-content-center">
+    <!-- Produk Populer -->
+    <div class="container my-5">
+        <h2 class="fw-bold text-center mb-4">🍪 Kue Populer Minggu Ini</h2>
+        <div class="row g-4 justify-content-center">
 
-                <!--P1-->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm" style="border-radius: 15px; overflow: hidden;">
-                        <img class="card-img-top" src="img/cheesecake-card.jpg" alt="Cheesecake" style="height: 200px; object-fit: cover;">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-center fw-bold" style="color: #3e2723;">Cheesecake</h5>
-                            <p class="card-text flex-grow-1" style="color: #666; line-height: 1.5;">Cheesecake lembut dan creamy dengan rasa manis-gurih yang seimbang, berpadu dengan aroma susu yang khas.</p>
-                            <a href="user/produk.php" class="btn btn-primary mt-auto" style="border-radius: 10px; font-weight: 600;">Shop Now</a>
-                        </div>
+            <!--P1-->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+                    <img class="card-img-top" src="img/cheesecake-card.jpg" alt="Cheesecake" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center fw-bold" style="color: #3e2723;">Cheesecake</h5>
+                        <p class="card-text flex-grow-1" style="color: #666; line-height: 1.5;">Cheesecake lembut dan creamy dengan rasa manis-gurih yang seimbang, berpadu dengan aroma susu yang khas.</p>
+                        <a href="user/produk.php" class="btn btn-primary mt-auto" style="border-radius: 10px; font-weight: 600;">Shop Now</a>
                     </div>
                 </div>
-                
-                <!--P2-->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm" style="border-radius: 15px; overflow: hidden;">
-                        <img class="card-img-top" src="img/cookies-card.jpg" alt="Cookies" style="height: 200px; object-fit: cover;">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-center fw-bold" style="color: #3e2723;">Cookies</h5>
-                            <p class="card-text flex-grow-1" style="color: #666; line-height: 1.5;">Cookies renyah di luar dan lembut di dalam, menghadirkan rasa manis gurih dengan berbagai pilihan topping dan isian.</p>
-                            <a href="user/produk.php" class="btn btn-primary mt-auto" style="border-radius: 10px; font-weight: 600;">Shop Now</a>
-                        </div>
+            </div>
+
+            <!--P2-->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+                    <img class="card-img-top" src="img/cookies-card.jpg" alt="Cookies" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center fw-bold" style="color: #3e2723;">Cookies</h5>
+                        <p class="card-text flex-grow-1" style="color: #666; line-height: 1.5;">Cookies renyah di luar dan lembut di dalam, menghadirkan rasa manis gurih dengan berbagai pilihan topping dan isian.</p>
+                        <a href="user/produk.php" class="btn btn-primary mt-auto" style="border-radius: 10px; font-weight: 600;">Shop Now</a>
                     </div>
                 </div>
-                
-                <!--P3-->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm" style="border-radius: 15px; overflow: hidden;">
-                        <img class="card-img-top" src="img/brownies-card.jpg" alt="Brownies" style="height: 200px; object-fit: cover;">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-center fw-bold" style="color: #3e2723;">Brownies</h5>
-                            <p class="card-text flex-grow-1" style="color: #666; line-height: 1.5;">Brownies cokelat pekat dengan tekstur fudgy, manisnya pas, dan aroma cokelat yang intens di setiap gigitan.</p>
-                            <a href="user/produk.php" class="btn btn-primary mt-auto" style="border-radius: 10px; font-weight: 600;">Shop Now</a>
-                        </div>
+            </div>
+
+            <!--P3-->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+                    <img class="card-img-top" src="img/brownies-card.jpg" alt="Brownies" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center fw-bold" style="color: #3e2723;">Brownies</h5>
+                        <p class="card-text flex-grow-1" style="color: #666; line-height: 1.5;">Brownies cokelat pekat dengan tekstur fudgy, manisnya pas, dan aroma cokelat yang intens di setiap gigitan.</p>
+                        <a href="user/produk.php" class="btn btn-primary mt-auto" style="border-radius: 10px; font-weight: 600;">Shop Now</a>
                     </div>
                 </div>
             </div>
         </div>
-            <!-- <?php
-                    $sql = "SELECT * FROM produk LIMIT 3";
-                    $result = mysqli_query($conn, $sql);
+    </div>
+    <!-- <?php
+            $sql = "SELECT * FROM produk LIMIT 3";
+            $result = mysqli_query($conn, $sql);
 
-                    if (!$result) {
-                        die("Query gagal: " . mysqli_error($conn));
-                    }
+            if (!$result) {
+                die("Query gagal: " . mysqli_error($conn));
+            }
 
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+            ?>
                     <div class="col-md-4">
                         <div class="card p-3 text-center">
                             <img src="img/<?php echo $row['gambar'] ?>" class="card-img-top rounded-3" alt="Cheesecake" style="height: 200px; object-fit: cover;">
@@ -309,27 +321,27 @@ include 'connection.php';
                         </div>
                     </div>
             <?php
-                        }
-                    }
+                }
+            }
             ?> -->
 
 
-            <!-- Promo Section -->
-            <div class="mt-5 text-center p-5 rounded-4" style="background-color: #f5deb3;">
-                <h3>🎉 Promo Spesial Akhir Pekan!</h3>
-                <p>Dapatkan potongan harga 20% untuk semua varian cheesecake hingga Minggu ini.</p>
-                <a href="#" class="btn btn-brown">Lihat Promo</a>
-            </div>
-            </div>
-        </div> <!-- close .container -->
+    <!-- Promo Section -->
+    <div class="mt-5 text-center p-5 rounded-4" style="background-color: #f5deb3;">
+        <h3>🎉 Promo Spesial Akhir Pekan!</h3>
+        <p>Dapatkan potongan harga 20% untuk semua varian cheesecake hingga Minggu ini.</p>
+        <a href="#" class="btn btn-brown">Lihat Promo</a>
+    </div>
+    </div>
+    </div> <!-- close .container -->
 
-        <!-- Footer (full-width) -->
-        <footer class="mt-5 w-100 text-center">
-            <p>&copy; 2025 SweetBite Bakery | Semua hak cipta dilindungi 🍰</p>
-        </footer>
+    <!-- Footer (full-width) -->
+    <footer class="mt-5 w-100 text-center">
+        <p>&copy; 2025 SweetBite Bakery | Semua hak cipta dilindungi 🍰</p>
+    </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="navbar-mobile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="navbar-mobile.js"></script>
 </body>
 
 </html>
